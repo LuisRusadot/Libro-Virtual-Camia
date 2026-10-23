@@ -427,7 +427,7 @@ body{
   <div class="polvo" style="left:88%;top:58%;width:2px;height:2px;animation-duration:34s;animation-delay:12s;"></div>
 
   <div class="barra-top">
-    <div class="bt-titulo">CODEX CÍVICO<small>Educación Constitucional · 1991</small></div>
+    <div class="bt-titulo">Educación Constitucional y Ciudadanía crítica<small>Educación Constitucional · 1991</small></div>
     <div class="bt-botones">
       <button class="btn-ico" id="btnSonido" title="Sonido de página">🔊</button>
       <button class="btn-ico" id="btnIndice" title="Índice del libro">☰</button>
@@ -449,13 +449,6 @@ body{
 </div>
 
 <div class="vineta"></div>
-
-<!-- Capa: libro cerrado al inicio -->
-<div class="capa visible" id="capaInicio">
-  <h2>Codex Cívico</h2>
-  <p>Educación Constitucional y Ciudadanía Crítica: comprender, participar y transformar Colombia. Un libro virtual para leer la Constitución de 1991 página a página.</p>
-  <button class="btn" id="btnAbrir">Abrir el libro</button>
-</div>
 
 <!-- Capa: final -->
 <div class="capa" id="capaFin">
@@ -1228,7 +1221,7 @@ function cubiertaHTML(dorso){
         '</div>'+
         '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;">'+
           '<div class="cinta"><span></span><span></span><span></span></div>'+
-          '<div class="cub-autor">María Camila Mira Montoya<small>Grado 11-6 · I.T.I. Pascual Bravo · Medellín, 2026</small></div>'+
+          '<div class="cub-autor">María Camila Mira Montoya<small>Medellín, 2026</small></div>'+
         '</div>'+
       '</div>';
   return '<div class="cubierta"><div class="borde"></div><span class="esq tl"></span><span class="esq tr"></span><span class="esq bl"></span><span class="esq br"></span>'+interior+'</div>';
@@ -1242,8 +1235,8 @@ function portadaHTML(){
       '<div class="div" style="width:80%;">❦</div>'+
       '<div style="font-family:var(--serif);font-style:italic;font-size:.95em;color:var(--esmeralda);">Comprender, participar y transformar Colombia</div>'+
       '<div class="cinta" style="margin-top:6px;"><span></span><span></span><span></span></div>'+
-      '<div style="margin-top:8px;font-family:var(--ui);font-size:.66em;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-mut);line-height:2;">Por <b style="color:var(--cuero-2);">María Camila Mira Montoya</b><br>Grado 11-6</div>'+
-      '<div style="font-family:var(--ui);font-size:.6em;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-mut);">Instituto Técnico Industrial Pascual Bravo<br>Medellín, 2026</div>'+
+      '<div style="margin-top:8px;font-family:var(--ui);font-size:.66em;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-mut);line-height:2;">Por <b style="color:var(--cuero-2);">María Camila Mira Montoya</b></div>'+
+      '<div style="font-family:var(--ui);font-size:.6em;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-mut);">Medellín, 2026</div>'+
       '<div class="q" style="max-width:90%;margin-top:8px;">«La democracia no es una conquista que pueda darse por garantizada para siempre»<span class="f">Conclusión</span></div>'+
     '</div>'+
     '<div class="piepg">i</div>';
@@ -1339,7 +1332,6 @@ function redibujarUI(){
   document.getElementById('btnSig').disabled = !fwd;
   document.getElementById('btnAnt').disabled = !back;
   /* capas */
-  document.getElementById('capaInicio').classList.toggle('visible', cur === 0);
   document.getElementById('capaFin').classList.toggle('visible', cur === T - 1);
 }
 /* estado inicial correcto para cubierta */
@@ -1465,7 +1457,6 @@ document.getElementById('indice').addEventListener('click', function(e){
 
 document.getElementById('btnSig').addEventListener('click', avanzar);
 document.getElementById('btnAnt').addEventListener('click', retroceder);
-document.getElementById('btnAbrir').addEventListener('click', function(){ avanzar(); });
 document.getElementById('btnPortada').addEventListener('click', function(){ saltarA(0); });
 document.getElementById('btnReleer').addEventListener('click', function(){ saltarA(0); });
 
